@@ -3,7 +3,9 @@ import React from "react";
 function CandyBucket(){
 
     return (
-        <div></div>
+        <div className="bucket-container">
+            <img className="bucket" src="https://i.imgur.com/3ZwfAoM.png"></img>
+        </div>
     )
 }
 
