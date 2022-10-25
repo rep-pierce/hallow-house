@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from "react";
+
 import HouseCard from "./HouseCard"
 import EnergyBar from "./EnergyBar"
 import CandyBucket from "./CandyBucket"
 
-function SpookyStreet() {
-    const [houses, setHouses] = useState([])
-
-    useEffect(()=>{
-        fetch('http://localhost:3001/houses')
-        .then(r=>r.json())
-        .then(h=>setHouses(h))
-    },[])
+function SpookyStreet({houses, setHouses, houseIndex, setHouseIndex}) {
+    let start = houseIndex
+    let end = houseIndex + 4
 
     function renderHouses(){
-        return houses.map(house=><HouseCard key={house.id} house={house}
+        const fourHouses = houses.slice(start, end)
+        return fourHouses.map(house=><HouseCard key={house.id} house={house}
             />
         )
     }
@@ -22,7 +18,7 @@ function SpookyStreet() {
         <div className="street">
             <div className="belt">
                 {renderHouses()}
-                <button>keep walkin</button>
+                <button onClick={() => setHouseIndex(houseIndex + 1)}>keep walkin</button>
             </div>
             <EnergyBar />
             <CandyBucket />
