@@ -57,6 +57,7 @@ body{
   padding-top: 25px;
   margin: auto;
   display: block;
+  position: absolute;
 }
 .energy {
   position: absolute;
@@ -76,4 +77,9 @@ body{
   padding: 25px;
   border: solid;
   border-color: black;
+}
+
+.candy {
+  width: 50px;
+  position:relative;
 }
