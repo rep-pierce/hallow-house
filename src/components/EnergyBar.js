@@ -18,16 +18,15 @@ function EnergyBar () {
 
     return(
         <div className="energy" >
-            <span>Energy:{100}%
-                <div className="bar" 
-                style={{color: "black", width: `${width}px`}} 
-                tabIndex={0} 
+            <span>
+                <div className="bar"
+                style={{color: "white", width: `${width}px`,  fontSize: "50px", backgroundColor: "red"}}
+                tabIndex={0}
                 onKeyDown={handleKeyDown}>
-                    keep going!
+                    Energy:{100}%
                 </div>
             </span>
         </div>
     )
 }
-
 export default EnergyBar

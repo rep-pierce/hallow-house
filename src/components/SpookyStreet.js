@@ -20,6 +20,8 @@ function SpookyStreet({houses, setHouses, houseIndex, setHouseIndex}) {
                 {renderHouses()}
                 <button onClick={() => setHouseIndex(houseIndex + 1)}>keep walkin</button>
             </div>
+            <img src="https://cliparting.com/wp-content/uploads/2016/10/Road-bitumen-clipart-by-megapixl.jpg"  style={{width: "100%", height: "150px"}}/>
+            <div className="grass">.</div>
             <EnergyBar />
             <CandyBucket />
         </div>
