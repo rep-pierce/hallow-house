@@ -66,9 +66,13 @@ html {
   margin-left: 12%;
 }
 
-.bar {
+/* .bar {
   width: 250px;
   height: 40px;
   background-color: red;
 
+} */
+.bar{
+  height: 40px;
+  background-color: pink;
 }
