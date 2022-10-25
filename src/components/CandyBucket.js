@@ -1,14 +1,12 @@
 import React from "react";
-// import handleRandomCandy from "./handleRandomCandy";
-// import Candy from "./Candy";
+import handleRandomCandy from "./handleRandomCandy";
 
 function CandyBucket(){
 
 
     return (
-        <div className="bucket-container">
+        <div className="bucket-container" onClick={handleRandomCandy}>
             <img className="bucket" src="https://i.imgur.com/3ZwfAoM.png"></img>
-            {/* { handleRandomCandy.length > 0 ? handleRandomCandy.map(candy => <Candy key={candy.name} image={candy.image} />) : null} */}
         </div>
     )
 }
