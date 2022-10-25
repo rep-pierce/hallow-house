@@ -5,7 +5,7 @@ function CandyBucket(){
     function handleClick(){
         setCandies(candies.concat(handleRandomCandy()))
     }
-console.log(candies)
+
     return (
         <div className="bucket-container" onClick={handleClick}>
             <img className="bucket" src="https://i.imgur.com/3ZwfAoM.png"></img>
