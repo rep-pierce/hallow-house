@@ -18,7 +18,7 @@ function SpookyStreet({houses, setHouses, houseIndex, setHouseIndex}) {
         <div className="street">
             <div className="belt">
                 {renderHouses()}
-                <button onClick={() => setHouseIndex(houseIndex + 1)} onClick={()=> setHouseIndex(houseIndex+1)}>keep walkin</button>
+                <button onClick={() => setHouseIndex(houseIndex + 1)}>keep walkin</button>
             </div>
             <EnergyBar />
             <CandyBucket />
