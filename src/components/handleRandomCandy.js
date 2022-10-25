@@ -5,7 +5,7 @@ const newCandy = [
     { name: "skittles", image: "https://i.imgur.com/isYGa3l.png" },
     { name: "kitkat", image: "https://i.imgur.com/UkElcBv.png" },
     { name: "snickers", image: "https://i.imgur.com/nXh6Xbf.png" },
-    { name: "lollipop", image: "https://i.imgur.com/CXsNvwJ.png" },
+    { name: "lollipop", image: "https://i.imgur.com/eKxWOXq.png" },
     { name: "candy", image: "https://i.imgur.com/IMhchCb.png" },
 ]
 function getNewRandomCandy() {
