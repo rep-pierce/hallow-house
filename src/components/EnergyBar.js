@@ -11,7 +11,6 @@ function EnergyBar () {
             setWidth((width) => width - 4)
             setEnergy((energy) => energy - 1)}
         else{
-            
             alert("You are DEAD!")
         }
     }
