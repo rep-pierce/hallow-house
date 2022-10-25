@@ -20,14 +20,15 @@ function handleRandomCandy() {
         return Math.floor(Math.random() * max);
     }
     let randomNum = getRandomInt(5)
-    console.log(randomNum)
     let candiesArray = []
     for (let i = randomNum; i >= 0; i--) {
         if (i > 0) {
             candiesArray.push(getNewRandomCandy())
         } else {
+
             return candiesArray
         }
     }
 }
+
 export default handleRandomCandy
