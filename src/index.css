@@ -62,8 +62,8 @@ html {
 .energy {
   position: absolute;
   bottom: 0;
-  margin-bottom: 3%;
-  margin-left: 12%;
+  /* margin-bottom: 3%;
+  margin-left: 12%; */
 }
 
 /* .bar {
