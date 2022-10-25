@@ -28,8 +28,8 @@ code {
   position: relative;
 } */
 
-html { 
-  background: url('https://i.imgur.com/lAzfBmF.png') no-repeat center center fixed; 
+html {
+  background: url('https://i.imgur.com/lAzfBmF.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -37,13 +37,16 @@ html {
 }
 
 .bucket-container {
-  display: inline;
+  /* display: inline;
+
+  float: right;
+  margin-top: 200px; */
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 300px;
   height: 300px;
   background-color: orange;
-  float: right;
-  bottom: 0;
-  margin-top: 200px;
 }
 
 .bucket {
@@ -56,8 +59,16 @@ html {
   display: block;
 }
 
-.bar{
+.energy {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 3%;
+  margin-left: 12%;
+}
+
+.bar {
   width: 250px;
   height: 40px;
   background-color: red;
+
 }

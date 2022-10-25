@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import HouseCard from "./HouseCard"
 import EnergyBar from "./EnergyBar"
 import CandyBucket from "./CandyBucket"
-import { Route } from "react-router-dom"
 
 function SpookyStreet() {
     const [houses, setHouses] = useState([])
