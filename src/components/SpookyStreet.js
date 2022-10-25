@@ -1,20 +1,11 @@
-import React, { useEffect, useState } from "react";
+
 import HouseCard from "./HouseCard"
 import EnergyBar from "./EnergyBar"
 import CandyBucket from "./CandyBucket"
 
-function SpookyStreet() {
-    const [houses, setHouses] = useState([])
-    const [houseIndex, setHouseIndex] = useState(0)
-
+function SpookyStreet({houses, setHouses, houseIndex, setHouseIndex}) {
     let start = houseIndex
     let end = houseIndex + 4
-
-    useEffect(()=>{
-        fetch('http://localhost:3001/houses')
-        .then(r=>r.json())
-        .then(h=>setHouses(h))
-    },[])
 
     function renderHouses(){
         const fourHouses = houses.slice(start, end)
@@ -27,7 +18,7 @@ function SpookyStreet() {
         <div className="street">
             <div className="belt">
                 {renderHouses()}
-                <button onClick={()=> setHouseIndex(houseIndex+1)}>keep walkin</button>
+                <button onClick={() => setHouseIndex(houseIndex + 1)} onClick={()=> setHouseIndex(houseIndex+1)}>keep walkin</button>
             </div>
             <EnergyBar />
             <CandyBucket />
