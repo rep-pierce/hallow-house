@@ -6,6 +6,7 @@ import Homepage from './Homepage'
 import GameOver from './GameOver'
 import { Route, Routes } from "react-router-dom"
 import { useEffect, useState } from "react";
+import EnergyBar from './EnergyBar';
 
 
 function App() {
@@ -49,12 +50,23 @@ function App() {
             setCandies={setCandies}
             setCurrentPorch={setCurrentPorch}
           />}
-            />
-            <Route path="/porch" element={
-            <HousePorch 
-            currentPorch={currentPorch}
-            />} />
-            <Route path="/GameOver" element={<GameOver />} />
+        />
+
+        <Route
+          path="/porch"
+          element={<HousePorch
+            width={width}
+            setWidth={setWidth}
+            energy={energy}
+            setEnergy={setEnergy}
+            candies={candies}
+            setCandies={setCandies}
+          />}
+        />
+        <Route
+          path="/GameOver"
+          element={<GameOver />}
+        />
       </Routes>
     </div>
   );

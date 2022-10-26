@@ -70,7 +70,7 @@ function SpookyStreet({ houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc
     }
 
     if (energy<1){
-        navigate('/GameOver')
+        navigate("/GameOver")
     }
 
     let Username = "Spooky";
