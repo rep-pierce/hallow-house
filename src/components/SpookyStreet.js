@@ -57,6 +57,9 @@ function SpookyStreet({ houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc
         alert("You are DEAD!")
     }
 
+    let Username = "Spooky";
+    let TotalCandy = 15;
+
     return (
         <div>
             <div className="belt">
@@ -75,6 +78,9 @@ function SpookyStreet({ houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc
                 />
             </div>
             <div className="grass">.</div>
+            <div>
+            <h3 className="userh3">Username: {Username}</h3>
+            </div>
             <EnergyBar
                 width={width}
                 setWidth={setWidth}
