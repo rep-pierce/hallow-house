@@ -28,10 +28,7 @@ function HousePorch({ currentPorch }) {
 
         let background = porchBool === 1 ? currentPorch.closed : currentPorch.open
     return(
-        <div onClick={() => setPorchBool(porchBool - 1)} style={{backgroundImage: `url(${background})`, position: 'absolute', width: '2100px', height: '1050px'}}>
-            <h1>now you're on the porch</h1>
-            <button onClick={goBackClick}>get back to trick or treatin</button>
-        </div>
+        <img onClick={() => setPorchBool(porchBool - 1)} src={background} style={{width: '70%', height: '100%'}} />
     )
 }
 
