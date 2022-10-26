@@ -10,7 +10,8 @@ import { useEffect, useState } from "react";
 function App() {
   const [houses, setHouses] = useState([])
   const [houseIndex, setHouseIndex] = useState(0)
- 
+  const [ghostLoc, setGhostLoc] = useState(0)
+
   useEffect(() => {
     fetch('http://localhost:3001/houses')
       .then(r => r.json())
@@ -32,6 +33,8 @@ function App() {
             setHouses={setHouses}
             houseIndex={houseIndex}
             setHouseIndex={setHouseIndex}
+            ghostLoc={ghostLoc}
+            setGhostLoc={setGhostLoc}
           />}
             />
             <Route path="/porch" element={<HousePorch />} />

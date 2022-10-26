@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 
 function HousePorch() {
@@ -8,6 +8,21 @@ function HousePorch() {
     function goBackClick(){
         navigate('/spookystreet')
     }
+
+    useEffect(() => {
+        function handleKeyPress(e) {
+            
+             if (e.key==='ArrowDown'){
+                navigate('/spookystreet')
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyPress)
+
+        return function cleanup() {
+            document.removeEventListener('keydown', handleKeyPress)
+        }
+    })
 
     return(
         <div>
