@@ -5,9 +5,24 @@ import CandyBucket from "./CandyBucket"
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
-function SpookyStreet({ houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc, width, setWidth, energy, setEnergy, candies, setCandies }) {
+function SpookyStreet({ houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc, width, setWidth, energy, setEnergy, candies, setCandies, setCurrentPorch }) {
     let start = houseIndex
     let end = houseIndex + 4
+
+    let nextId = 3
+    const housePorches = [
+        {closed: "https://i.imgur.com/8gKB2e1.jpg", open: "https://i.imgur.com/Gj4rbsx.jpg"},
+        {closed: "https://i.imgur.com/qykF5SL.jpg", open: "https://i.imgur.com/oSo8nFM.jpg"},
+        {closed: "https://i.imgur.com/ePkGC0v.jpg", open: "https://i.imgur.com/35Aa1oc.jpg"}
+        ]
+      
+    function getNewRandomBackground() {
+      const index = Math.floor(Math.random() * housePorches.length);
+      const porchBackground = { ...housePorches[index] };
+      porchBackground.id = nextId;
+      nextId++;
+      return porchBackground;
+    }
 
     const navigate = useNavigate()
 
@@ -31,6 +46,7 @@ function SpookyStreet({ houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc
                 setEnergy((energy) => energy - 1)
             }
             else if (e.key === 'ArrowUp') {
+                setCurrentPorch(getNewRandomBackground())
                 navigate('/porch')
             }
         }

@@ -16,6 +16,7 @@ function App() {
   const [width, setWidth] = useState("400")
   const [energy, setEnergy] = useState("100")
   const [candies, setCandies] = useState([])
+  const [currentPorch, setCurrentPorch] = useState({})
 
   useEffect(() => {
     fetch('http://localhost:3001/houses')
@@ -46,9 +47,13 @@ function App() {
             setEnergy={setEnergy}
             candies={candies}
             setCandies={setCandies}
+            setCurrentPorch={setCurrentPorch}
           />}
             />
-            <Route path="/porch" element={<HousePorch />} />
+            <Route path="/porch" element={
+            <HousePorch 
+            currentPorch={currentPorch}
+            />} />
             <Route path="/GameOver" element={<GameOver />} />
       </Routes>
     </div>
