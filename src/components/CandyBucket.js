@@ -3,9 +3,9 @@ import handleRandomCandy from "./handleRandomCandy";
 
 function CandyBucket({ width, setWidth, energy, setEnergy, candies, setCandies }) {
 
-    function handleAddCandy() {
-        setCandies(candies.concat(handleRandomCandy()))
-    }
+    // function handleAddCandy() {
+    //     setCandies(candies.concat(handleRandomCandy()))
+    // }
 
     function handleDeleteCandy(deletedCandy) {
         setCandies(candies.filter((candy) => candy.id !== deletedCandy.id))
@@ -28,7 +28,7 @@ function CandyBucket({ width, setWidth, energy, setEnergy, candies, setCandies }
             <img
                 className="bucket"
                 src="https://i.imgur.com/3ZwfAoM.png"
-                onClick={handleAddCandy}
+                // onClick={handleAddCandy}
             />
             {candies.map(candy =>
                 <img
