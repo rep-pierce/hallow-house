@@ -61,6 +61,7 @@ function App() {
             setEnergy={setEnergy}
             candies={candies}
             setCandies={setCandies}
+            currentPorch={currentPorch}
           />}
         />
         <Route

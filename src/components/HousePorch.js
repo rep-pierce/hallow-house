@@ -27,11 +27,11 @@ function HousePorch({ width, setWidth, energy, setEnergy, candies, setCandies }{
             document.removeEventListener('keydown', handleKeyPress)
         }
     })
-
+    let background = porchBool === 1 ? currentPorch.closed : currentPorch.open
     return (
         <div>
-            <h1>now you're on the porch</h1>
-            <button onClick={goBackClick}>get back to trick or treatin</button>
+
+            <img onClick={() => setPorchBool(porchBool - 1)} src={background} style={{ width: '70%', height: '100%' }} />
             {<EnergyBar
                 width={width}
                 setWidth={setWidth}
