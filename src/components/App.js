@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [houses, setHouses] = useState([])
   const [houseIndex, setHouseIndex] = useState(0)
-
+ 
   useEffect(() => {
     fetch('http://localhost:3001/houses')
       .then(r => r.json())
