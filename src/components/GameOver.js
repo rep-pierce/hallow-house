@@ -6,6 +6,7 @@ function GameOver(){
 
     function handleClick(){
         navigate('/')
+        window.location.href=window.location.href
     }
 
 
