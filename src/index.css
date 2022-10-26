@@ -73,6 +73,11 @@ body {
   margin-left: 12%; */
 }
 
+.userh3{
+  color: white;
+  font-size: 40px;
+}
+
 /* .bar {
   width: 250px;
   height: 40px;
@@ -90,6 +95,15 @@ body {
   color: white;
 }
 
+.gameoverBtn{
+  font-size: 50px;
+  background-color: red;
+  color: black
+}
+.userBtn{
+  background-color: white;
+  font-size: 30px;
+}
 .candy {
   width: 50px;
   position: relative;

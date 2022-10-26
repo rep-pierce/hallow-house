@@ -3,6 +3,7 @@ import React from 'react';
 import SpookyStreet from './SpookyStreet'
 import HousePorch from './HousePorch'
 import Homepage from './Homepage'
+import GameOver from './GameOver'
 import { Route, Routes } from "react-router-dom"
 import { useEffect, useState } from "react";
 
@@ -11,6 +12,7 @@ function App() {
   const [houses, setHouses] = useState([])
   const [houseIndex, setHouseIndex] = useState(0)
   const [ghostLoc, setGhostLoc] = useState(0)
+  const [name, setName] = useState("Spooky")
 
   useEffect(() => {
     fetch('http://localhost:3001/houses')
@@ -18,7 +20,7 @@ function App() {
       .then(h => setHouses(h))
   }, [])
 
-  
+
 
 
   return (
@@ -38,6 +40,7 @@ function App() {
           />}
             />
             <Route path="/porch" element={<HousePorch />} />
+            <Route path="/GameOver" element={<GameOver />} />
       </Routes>
     </div>
   );

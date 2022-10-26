@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../index.css'
 
 function EnergyBar () {
-    const [width, setWidth] = useState("400")
+    const [width, setWidth] = useState("500")
     const [energy, setEnergy] = useState("100")
 
+    const navigate = useNavigate()
 
     
     useEffect(() => {
         function handleKeyDown(e){
             if(width >= 0 & energy >0){
-                setWidth((width) => width - 4)
+                setWidth((width) => width - 5)
                 setEnergy((energy) => energy - 1)}
             else{
-                alert("You are DEAD!")
+                navigate("/GameOver")
             }
         }
 
