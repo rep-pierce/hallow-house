@@ -1,18 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"
 
 function HouseCard({house}) {
 
-    const navigate = useNavigate()
-
-    function handleHouseClick(e){
-        console.log(house.id)
-        navigate('/porch')
-    }
-
     return (
        <div className="house">
-        <img onClick={handleHouseClick} className="house" alt="pic of house" src={house.image}/>
+        <img className="house" alt="pic of house" src={house.image}/>
        </div> 
     )
 }

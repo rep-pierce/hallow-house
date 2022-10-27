@@ -6,7 +6,20 @@ import handleRandomCandy from "./handleRandomCandy";
 import sound from "./../Door-knock-sound-effect.mp3"
 import sound2 from "./../door-open-sound.mp3"
 
-function HousePorch({ width, setWidth, energy, setEnergy, candies, setCandies, currentPorch, direcs3, showDirecs3, showDirecs4 }) {
+function HousePorch({ 
+    width, 
+    setWidth, 
+    energy, 
+    setEnergy, 
+    candies, 
+    setCandies, 
+    currentPorch, 
+    // direcs3, 
+    // showDirecs3, 
+    showDirecs4,
+    color,
+    setColor
+}) {
 
     const [doorOpen, setDoorOpen] = useState(false)
     const [message, setMessage] = useState(false)
@@ -25,12 +38,14 @@ function HousePorch({ width, setWidth, energy, setEnergy, candies, setCandies, c
                 showDirecs4(true)
             }
             else if (e.key === ' ') {
+
                 if (!knocked) {
                     knockSound.play()
-                    showDirecs3(false)
+                    // showDirecs3(false)
                     setTimeout(() => {
                         if (trickOrTreat.length === 0) {
                             setMessage(true)
+                            setKnocked(true)
                         } else {
                             doorOpenSound.play()
                             setTimeout(() => {
@@ -51,24 +66,24 @@ function HousePorch({ width, setWidth, energy, setEnergy, candies, setCandies, c
         }
     })
 
-    function handleDoorClick() {
-        if (!knocked) {
-            knockSound.play()
-            showDirecs3(false)
-            setTimeout(() => {
-                if (trickOrTreat.length === 0) {
-                    setMessage(true)
-                } else {
-                    doorOpenSound.play()
-                    setTimeout(() => {
-                        setDoorOpen(true)
-                        setCandies(candies.concat(trickOrTreat))
-                        setKnocked(true)
-                    }, 1000)
-                }
-            }, 2000)
-        }
-    }
+    // function handleDoorClick() {
+    //     if (!knocked) {
+    //         knockSound.play()
+    //         showDirecs3(false)
+    //         setTimeout(() => {
+    //             if (trickOrTreat.length === 0) {
+    //                 setMessage(true)
+    //             } else {
+    //                 doorOpenSound.play()
+    //                 setTimeout(() => {
+    //                     setDoorOpen(true)
+    //                     setCandies(candies.concat(trickOrTreat))
+    //                     setKnocked(true)
+    //                 }, 1000)
+    //             }
+    //         }, 2000)
+    //     }
+    // }
 
     function backClick() {
         navigate('/spookystreet')
@@ -76,18 +91,28 @@ function HousePorch({ width, setWidth, energy, setEnergy, candies, setCandies, c
 
     }
     let background = !doorOpen ? currentPorch.closed : currentPorch.open
+    if(width >= 0 & energy >= 90){
+        setColor("green")
+    }
+    if(width >= 0 & energy > 50 & energy < 90){
+        setColor("orange")
+    }
+    if(width >= 0 & energy <= 50 & energy >=1){
+        setColor("red")
+    }
 
     return (
         <div>
-            {direcs3 ? <div className="directions">spacebar to knock!</div> : null}
+            {/* {direcs3 ? <div className="directions">spacebar to knock!</div> : null} */}
             {message ? <div onClick={backClick} className="no-candy">they didn't answer 💀<br></br>should we tp them?🧻</div> : null}
-            {knocked ? <button onClick={backClick} className="back-button">↓back↓to the streets</button> : null}
-            <img onClick={handleDoorClick} src={background} style={{ width: '70%', height: '100%' }} />
+            {/* {knocked ? <button onClick={backClick} className="back-button">↓back↓to the streets</button> : null} */}
+            <img src={background} style={{ width: '70%', height: '100%' }} />
             {<EnergyBar
                 width={width}
                 setWidth={setWidth}
                 energy={energy}
                 setEnergy={setEnergy}
+                color={color}
             />}
             {<CandyBucket
                 width={width}

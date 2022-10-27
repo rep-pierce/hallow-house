@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function UserForm({handleSubmit, handleName, handleImage, image, name}){
   return (

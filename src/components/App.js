@@ -18,9 +18,8 @@ function App() {
   const [selectedAvatar, setSelectedAvatar] = useState("")
   const [name, setName] = useState("")
   const [image, setImage] = useState("")
-
-  const [width, setWidth] = useState("400")
-  const [energy, setEnergy] = useState("150")
+  const [width, setWidth] = useState("500")
+  const [energy, setEnergy] = useState("100")
   const [candies, setCandies] = useState([])
   const [currentPorch, setCurrentPorch] = useState({})
   const [direcs1, showDirecs1] = useState(false)
@@ -28,6 +27,7 @@ function App() {
   const [direcs3, showDirecs3] = useState(false)
   const [direcs4, showDirecs4] = useState(false)
   const [playing, isPlaying] = useState(false)
+  const [color, setColor]  = useState("green")
 
   useEffect(() => {
     fetch('http://localhost:3001/houses')
@@ -52,7 +52,7 @@ function App() {
       console.log('can you see me')
       song.pause()
       isPlaying(false)
-    }
+    }}
 
 
   return (
@@ -92,6 +92,8 @@ function App() {
             showDirecs2={showDirecs2}
             showDirecs3={showDirecs3}
             direcs4={direcs4}
+            color={color}
+            setColor={setColor}
           />}
         />
 
@@ -108,6 +110,8 @@ function App() {
             direcs3={direcs3}
             showDirecs3={showDirecs3}
             showDirecs4={showDirecs4}
+            color={color}
+            setColor= {setColor}
           />}
             />
             <Route path="/porch" element={<HousePorch />} />

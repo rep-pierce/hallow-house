@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import App from "./App";
+
 
 function AvatarCard({avatar, setSelectedAvatar}){
     const navigate=useNavigate()

@@ -1,17 +1,3 @@
-/*body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
-
 /* houses */
 .house {
   width: 405px;
@@ -34,7 +20,9 @@ code {
   background-color: orange;
 }
 
-
+body{
+  background-color: black;
+}
 
 /* Avatar */
 .avatarDiv{
@@ -61,9 +49,6 @@ code {
   100%   { transform: translate(0, -0px); }   
 }
 
-
-
-
 /* AvatrForm */
 .text{
   width: 500px;
@@ -83,8 +68,6 @@ code {
   font-size: 40px;
 }
 
-
-
 /* SpookyStreet */
 .belt {
   grid-area: bt;
@@ -93,26 +76,14 @@ code {
   background-image: url("https://i.imgur.com/xh4TrK7.jpg");
 }
 
-<<<<<<< HEAD
 .grass {
   font-size: 400px;
   background-image: url("https://i.imgur.com/IfLsUc6.png");
   color: rgb(15, 109, 15);
   background-color: rgb(7, 59, 7);
 }
-=======
->>>>>>> Cform
-
-.house {
-  width: 405px;
-  height: 420px;
-  margin: auto;
-}
 
 .bucket-container {
-  /* display: inline;
-  float: right;
-  margin-top: 200px; */
   position: absolute;
   bottom: 0;
   right: 0;
@@ -121,7 +92,7 @@ code {
   background-color: plum;
   border: solid;
   border-color: black;
-=======
+}
 /* Homepage */
 .homePage{
   background-color: black;
@@ -131,9 +102,6 @@ code {
 
 .bucket {
   height: 100px;
-  /* display: flex;
-  justify-content: center;
-  text-align: center; */
   padding-top: 25px;
   margin: auto;
   display: block;
@@ -150,13 +118,7 @@ code {
   font-size: 40px;
 }
 
-/* .bar {
-  width: 250px;
-  height: 40px;
-  background-color: red;
-} */
 .bar {
-  /* height: 100px; */
   margin: auto;
   display: block;
   padding: 25px;
@@ -172,20 +134,16 @@ code {
   color: black
 }
 
-
-
-
 /* Candy */
 .candy {
   width: 120px;
   position: relative;
-=======
+}
 /* Avatar */
 .avatarDiv{
   background-image: url("https://st.depositphotos.com/2015673/3066/v/600/depositphotos_30668111-stock-illustration-happy-halloween.jpg");
   width: 100%;
   height: 100%;
->>>>>>> Cform
 }
 
 .avatar {
@@ -208,47 +166,16 @@ code {
   100%   { transform: translate(0, -0px); }   
 }
 
-.more-button {
-  height: 100px;
-  width: 98px;
-  /* position: relative; */
-  float: right;
-  margin-top: 7.5%;
-  background: url('https://i.imgur.com/f0f6xAz.png');
-  background-size: 100px;
-  filter: invert(100%);
-  font-style: italic;
-  font-weight: bold;
-  border-radius: 5%;
-  outline-style: groove;
-  outline-width: 5px;
-  opacity: 69.5%;
-  transition: all .25s ease-out;
-}
-
-.more-button:hover {
-  opacity: 1000%;
-  transition: all .25s ease-in;
-}
-
-.more-button:active {
-  opacity: 1;
-  animation: fade .1s;
-}
-
 @keyframes fade {
   0% { opacity: 0%; }
   100% { opacity: 1; }
 }
 
 /* HTML+Body */
-
 html {
   transition: all 2s ease-in;
-  overflow: hidden;
+  text-align: center;
 }
-
-
 
 html:active{
   opacity: 1;

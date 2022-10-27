@@ -2,12 +2,12 @@
 import HouseCard from "./HouseCard"
 import EnergyBar from "./EnergyBar"
 import CandyBucket from "./CandyBucket"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import Songbar from "./Songbar"
-import { render } from "@testing-library/react"
 
 function SpookyStreet({
+    selectedAvatar,
     houses,
     houseIndex,
     setHouseIndex,
@@ -23,7 +23,10 @@ function SpookyStreet({
     direcs1,
     direcs2,
     showDirecs3,
-    direcs4
+    direcs4,
+    color,
+    setColor,
+    showDirecs1
 }) {
    
 
@@ -60,6 +63,7 @@ function SpookyStreet({
                 setGhostLoc(ghostLoc + 8)
                 setWidth((width) => width - 4)
                 setEnergy((energy) => energy - 1)
+                
             }
             else if (e.key === 'ArrowLeft') {
                 setGhostLoc(ghostLoc - 8)
@@ -69,7 +73,7 @@ function SpookyStreet({
             else if (e.key === 'ArrowUp') {
                 setCurrentPorch(getNewRandomBackground())
                 navigate('/porch')
-                showDirecs3(true)
+                // showDirecs3(true)
             }
         }
 
@@ -81,6 +85,17 @@ function SpookyStreet({
         }
     })
 
+
+    if(width >= 0 & energy >= 90){
+        setColor("green")
+    }
+    if(width >= 0 & energy > 50 & energy < 90){
+        setColor("orange")
+    }
+    if(width >= 0 & energy <= 50 & energy >=1){
+        setColor("red")
+    }
+
     // useEffect(() => {
     //     const timer = setTimeout(() => showDirecs1(true), 4000)
     //     return()=>clearTimeout(timer)
@@ -90,24 +105,19 @@ function SpookyStreet({
         setGhostLoc(-995)
         setHouseIndex(houseIndex + 4)
     }
-
     if (ghostLoc < -1000) {
         setGhostLoc(995)
         setHouseIndex(houseIndex - 4)
     }
-
     if (energy < 1) {
         navigate("/GameOver")
-    }
-
-    let Username = "Spooky";
- 
+    } 
 
     return (
         <div>
-            {direcs1 ? <div className="directions">press the arrow→keys←to→move→←</div> : null}
+            {/* {direcs1 ? <div className="directions">press the arrow→keys←to→move→←</div> : null}
             {direcs2 ? <div className="directions">press ↑up↑ when u get to a house↑↑↑</div> : null}
-            {direcs4 ? <div className="directions">click a piece of candy for more energy</div> : null}
+            {direcs4 ? <div className="directions">click a piece of candy for more energy</div> : null} */}
             <div className="belt">
                 {renderHouses()}
                 {/* <button className="more-button" onClick={() => setHouseIndex(houseIndex + 1)}>keep walkin</button> */}
@@ -130,9 +140,8 @@ function SpookyStreet({
             </div>
             <EnergyBar
                 width={width}
-                setWidth={setWidth}
                 energy={energy}
-                setEnergy={setEnergy}
+                color={color}
             />
             <CandyBucket
                 width={width}
