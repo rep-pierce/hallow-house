@@ -20,7 +20,7 @@ code {
 .grass {
   font-size: 325px;
   background-image: url("https://i.imgur.com/IfLsUc6.png");
-  color: green;
+  color: rgb(15, 109, 15);
   background-color: rgb(7, 59, 7);
 }
 
@@ -37,7 +37,7 @@ code {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 75%;
+  width: 69%;
   height: 150px;
   background-color: orange;
   border: solid;
@@ -84,7 +84,7 @@ body {
   background-color: red;
 } */
 .bar {
-  height: 100px;
+  /* height: 100px; */
   margin: auto;
   display: block;
   padding: 25px;
@@ -105,7 +105,7 @@ body {
   font-size: 30px;
 }
 .candy {
-  width: 50px;
+  width: 120px;
   position: relative;
 }
 
@@ -165,8 +165,60 @@ body {
 
 html {
   transition: all 2s ease-in;
+  overflow: hidden;
 }
 
 html:active{
   opacity: 1;
+}
+
+.no-candy {
+  font-size: 6rem;
+  color: red;
+  position: absolute;
+  position: fixed; 
+  width: 100%;
+  margin: auto;
+  top: 50%;
+  background-color: black;
+  outline-style: groove;
+}
+
+.back-button {
+  position: fixed;
+  width: 22%;
+  margin: auto;
+  top: 66.6%;
+  font-size: 74px;
+  left: 12%;
+  
+}
+
+.back-button:hover {
+  background-color: red;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+
+.back-button:active {
+  background-color: black;
+  color: black;
+}
+
+.directions {
+  color:black;
+  background-color: white;
+  position: absolute;
+  font-size: 100px;
+  top: 70%;
+  left: 25%;
+}
+
+.music-bar {
+  top: 0;
+  right: 0;
+  width: 20%;
+  border: 0;
+  position: absolute;
+  height: 200px;
 }
