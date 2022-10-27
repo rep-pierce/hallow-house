@@ -91,13 +91,13 @@ function HousePorch({
 
     }
     let background = !doorOpen ? currentPorch.closed : currentPorch.open
-    if(width >= 0 & energy >= 90){
+    if(width >= 0 & energy >= 75){
         setColor("green")
     }
-    if(width >= 0 & energy > 50 & energy < 90){
+    if(width >= 0 & energy > 25 & energy < 75){
         setColor("orange")
     }
-    if(width >= 0 & energy <= 50 & energy >=1){
+    if(width >= 0 & energy <= 25 & energy >=1){
         setColor("red")
     }
 

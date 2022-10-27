@@ -61,13 +61,13 @@ function SpookyStreet({
         function handleKeyPress(e) {
             if (e.key === 'ArrowRight') {
                 setGhostLoc(ghostLoc + 8)
-                setWidth((width) => width - 4)
+                setWidth((width) => width - 5)
                 setEnergy((energy) => energy - 1)
                 
             }
             else if (e.key === 'ArrowLeft') {
                 setGhostLoc(ghostLoc - 8)
-                setWidth((width) => width - 4)
+                setWidth((width) => width - 5)
                 setEnergy((energy) => energy - 1)
             }
             else if (e.key === 'ArrowUp') {
@@ -86,13 +86,13 @@ function SpookyStreet({
     })
 
 
-    if(width >= 0 & energy >= 90){
+    if(width >= 0 & energy >= 75){
         setColor("green")
     }
-    if(width >= 0 & energy > 50 & energy < 90){
+    if(width >= 0 & energy > 25 & energy < 75){
         setColor("orange")
     }
-    if(width >= 0 & energy <= 50 & energy >=1){
+    if(width >= 0 & energy <= 25 & energy >=1){
         setColor("red")
     }
 
