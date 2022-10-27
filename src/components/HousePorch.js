@@ -31,6 +31,7 @@ function HousePorch({
     const doorOpenSound = new Audio(sound2)
 
     const trickOrTreat = handleRandomCandy()
+    
     useEffect(() => {
         function handleKeyPress(e) {
             if (e.key === 'ArrowDown') {
