@@ -28,8 +28,7 @@ function Homepage({ direcs1, showDirecs1, showDirecs2, handleSongClick}) {
             </div>
             <div >
                 <h3 style={{fontSize: "550px"}}></h3>
-                <img style={{height: "300px"}}/>
-            </div>
+                <img style={{height: "350px"}}/>
         </div>
     )
 }
