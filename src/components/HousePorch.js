@@ -3,28 +3,45 @@ import { useNavigate } from "react-router-dom"
 import EnergyBar from "./EnergyBar";
 import CandyBucket from "./CandyBucket";
 import handleRandomCandy from "./handleRandomCandy";
+import sound from "./../Door-knock-sound-effect.mp3"
+import sound2 from "./../door-open-sound.mp3"
 
-function HousePorch({ width, setWidth, energy, setEnergy, candies, setCandies, currentPorch }) {
+function HousePorch({ width, setWidth, energy, setEnergy, candies, setCandies, currentPorch, direcs3, showDirecs3, showDirecs4 }) {
 
     const [doorOpen, setDoorOpen] = useState(false)
-    const [noCandy, setNoCandy] = useState(false)
     const [message, setMessage] = useState(false)
     const [knocked, setKnocked] = useState(false)
 
     const navigate = useNavigate()
+
+    const knockSound = new Audio(sound)
+    const doorOpenSound = new Audio(sound2)
 
     const trickOrTreat = handleRandomCandy()
     useEffect(() => {
         function handleKeyPress(e) {
             if (e.key === 'ArrowDown') {
                 navigate('/spookystreet')
+                showDirecs4(true)
             }
-            // else if (e.key === ' ') {
-            //     setPorchBool(porchBool - 1)
-            //     if (porchBool === 1) {
-            //         setCandies(candies.concat(handleRandomCandy()))
-            //     }
-            // }
+            else if (e.key === ' ') {
+                if (!knocked) {
+                    knockSound.play()
+                    showDirecs3(false)
+                    setTimeout(() => {
+                        if (trickOrTreat.length === 0) {
+                            setMessage(true)
+                        } else {
+                            doorOpenSound.play()
+                            setTimeout(() => {
+                                setDoorOpen(true)
+                                setCandies(candies.concat(trickOrTreat))
+                                setKnocked(true)
+                            }, 1000)
+                        }
+                    }, 2000)
+                }
+            }
         }
 
         document.addEventListener('keydown', handleKeyPress)
@@ -36,27 +53,36 @@ function HousePorch({ width, setWidth, energy, setEnergy, candies, setCandies, c
 
     function handleDoorClick() {
         if (!knocked) {
-            if (trickOrTreat.length === 0) {
-                // console.log('no candy!')
-                // alert("sorry sucker!")
-                setMessage(true)
-
-                // setPorchBool(porchBool - 1)
-                
-            } else {
-                setDoorOpen(true)
-                setCandies(candies.concat(trickOrTreat))
-            }
-            setKnocked(true)
+            knockSound.play()
+            showDirecs3(false)
+            setTimeout(() => {
+                if (trickOrTreat.length === 0) {
+                    setMessage(true)
+                } else {
+                    doorOpenSound.play()
+                    setTimeout(() => {
+                        setDoorOpen(true)
+                        setCandies(candies.concat(trickOrTreat))
+                        setKnocked(true)
+                    }, 1000)
+                }
+            }, 2000)
         }
+    }
+
+    function backClick() {
+        navigate('/spookystreet')
+        showDirecs4(true)
+
     }
     let background = !doorOpen ? currentPorch.closed : currentPorch.open
 
     return (
         <div>
-            {message ? <div className="no-candy">no candies sucker</div>:null}
+            {direcs3 ? <div className="directions">spacebar to knock!</div> : null}
+            {message ? <div onClick={backClick} className="no-candy">they didn't answer 💀<br></br>should we tp them?🧻</div> : null}
+            {knocked ? <button onClick={backClick} className="back-button">↓back↓to the streets</button> : null}
             <img onClick={handleDoorClick} src={background} style={{ width: '70%', height: '100%' }} />
-            {noCandy ? <p>no candy!</p>:null}
             {<EnergyBar
                 width={width}
                 setWidth={setWidth}
