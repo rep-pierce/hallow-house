@@ -71,7 +71,6 @@ function SpookyStreet({ selectedAvatar, houses, houseIndex, setHouseIndex, ghost
             </div>
             <div className="grass">.</div>
             <div>
-            <h3 className="userh3" style={{fontSize: "100px"}}> Hallow House</h3>
             </div>
             <EnergyBar />
             <CandyBucket />
