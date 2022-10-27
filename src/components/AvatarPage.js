@@ -1,8 +1,9 @@
 import React from "react";
 import AvatarCard from "./AvatarCard";
 import UserForm from "./UserForm";
+import Songbar from "./Songbar";
 
-function AvatarPage({avatars, setSelectedAvatar, image, name, setImage, setName, setAvatar}){
+function AvatarPage({avatars, setSelectedAvatar, image, name, setImage, setName, setAvatar, playing, handleSongClick}){
 
     function handleSubmit(e){
         e.preventDefault()
@@ -38,6 +39,10 @@ function AvatarPage({avatars, setSelectedAvatar, image, name, setImage, setName,
             {renderAvatar()}
             </div>
             <UserForm handleSubmit={handleSubmit} handleName={handleName} image={image} name={name} handleImage={handleImage}/>
+            <Songbar
+            playing={playing}
+            handleSongClick={handleSongClick}
+            />
         </div>
     )
 }

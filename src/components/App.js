@@ -5,9 +5,9 @@ import HousePorch from './HousePorch'
 import Homepage from './Homepage'
 import GameOver from './GameOver'
 import AvatarPage from './AvatarPage';
-import { Route, Routes} from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import { useEffect, useState } from "react";
-import music from "../song.mp3"
+import music from "../WAC.wav"
 
 
 function App() {
@@ -22,12 +22,8 @@ function App() {
   const [energy, setEnergy] = useState("100")
   const [candies, setCandies] = useState([])
   const [currentPorch, setCurrentPorch] = useState({})
-  const [direcs1, showDirecs1] = useState(false)
-  const [direcs2, showDirecs2] = useState(false)
-  const [direcs3, showDirecs3] = useState(false)
-  const [direcs4, showDirecs4] = useState(false)
   const [playing, isPlaying] = useState(false)
-  const [color, setColor]  = useState("green")
+  const [color, setColor] = useState("green")
 
   useEffect(() => {
     fetch('http://localhost:3001/houses')
@@ -35,25 +31,25 @@ function App() {
       .then(h => setHouses(h))
   }, [])
 
-  const song = new Audio(music)
-    useEffect(() => {
+
+  useEffect(() => {
     fetch('http://localhost:3001/avatars')
       .then(r => r.json())
       .then(setAvatar)
   }, [])
 
+  const [song] = useState(new Audio(music))
 
-  function handleSongClick(){
-    if (!playing) {
+  function handleSongClick() {
+    if (playing === false) {
       song.play()
       isPlaying(true)
     }
-    else if (playing) {
-      console.log('can you see me')
+    else if (playing === true) {
       song.pause()
       isPlaying(false)
-    }}
-
+    }
+  }
 
   return (
     <div className="App">
@@ -62,17 +58,14 @@ function App() {
         <Route
           path="/"
           element={<Homepage
-            direcs1={direcs1}
-            showDirecs1={showDirecs1}
-            direcs2={direcs2}
-            showDirecs2={showDirecs2}
             handleSongClick={handleSongClick}
+            playing={playing}
           />}
         />
         <Route
           path="spookystreet"
           element={<SpookyStreet
-          selectedAvatar={selectedAvatar}
+            selectedAvatar={selectedAvatar}
             houses={houses}
             setHouses={setHouses}
             houseIndex={houseIndex}
@@ -86,14 +79,10 @@ function App() {
             candies={candies}
             setCandies={setCandies}
             setCurrentPorch={setCurrentPorch}
-            direcs1={direcs1}
-            showDirecs1={showDirecs1}
-            direcs2={direcs2}
-            showDirecs2={showDirecs2}
-            showDirecs3={showDirecs3}
-            direcs4={direcs4}
             color={color}
             setColor={setColor}
+            playing={playing}
+            handleSongClick={handleSongClick}
           />}
         />
 
@@ -107,27 +96,28 @@ function App() {
             candies={candies}
             setCandies={setCandies}
             currentPorch={currentPorch}
-            direcs3={direcs3}
-            showDirecs3={showDirecs3}
-            showDirecs4={showDirecs4}
             color={color}
-            setColor= {setColor}
+            setColor={setColor}
+            playing={playing}
+            handleSongClick={handleSongClick}
           />}
-            />
-            <Route path="/porch" element={<HousePorch />} />
-            <Route path="/GameOver" element={<GameOver />} />
-            <Route path="/GameOver" element={<GameOver />} />
-            <Route path="/AvatarPage" 
-            element={<AvatarPage
-            avatars={avatars} 
+        />
+        <Route path="/porch" element={<HousePorch />} />
+        <Route path="/GameOver" element={<GameOver />} />
+        <Route path="/GameOver" element={<GameOver />} />
+        <Route path="/AvatarPage"
+          element={<AvatarPage
+            avatars={avatars}
             setSelectedAvatar={setSelectedAvatar}
             setName={setName}
             setImage={setImage}
             name={name}
             image={image}
             setAvatar={setAvatar}
-            />
-            } />
+            playing={playing}
+            handleSongClick={handleSongClick}
+          />
+          } />
       </Routes>
     </div>
   );
