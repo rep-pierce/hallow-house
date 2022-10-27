@@ -1,21 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"
+import Songbar from "./Songbar";
 // import Songbar from "./Songbar";
 
-function Homepage({ direcs1, showDirecs1, showDirecs2, handleSongClick}) {
+function Homepage({ handleSongClick, playing }) {
     const navigate = useNavigate()
     function handleClick() {
         navigate('/AvatarPage')
 
-        // setTimeout(() => showDirecs1(true), 5000)
-        // setTimeout(() => showDirecs1(false), 11000)
-        // setTimeout(() => showDirecs2(true), 11000)
-        // setTimeout(() => showDirecs2(false), 20000)
     }
 
     return (
         <div className="homePage">
-            <h1 style={{textAlign: "center",color: "white", fontSize:"60px"}}>Welcome to Hallow House</h1>
+            <h1 style={{ textAlign: "center", color: "white", fontSize: "60px" }}>Welcome to Hallow House</h1>
             <button className="homeButton" onClick={handleClick} >Click To Choose Your Avatar</button>
             <div>
                 <h1 className="playInstructions">How to Play:</h1>
@@ -26,8 +23,14 @@ function Homepage({ direcs1, showDirecs1, showDirecs2, handleSongClick}) {
                     <p className="instructions">Move your character to the edge of the screen to see some more houses!</p>
                 </ul>
             </div>
-                <h3 style={{fontSize: "550px"}}></h3>
-                <img style={{height: "350px"}}/>
+            <div >
+                <h3 style={{ fontSize: "550px" }}></h3>
+                <img style={{ height: "300px" }} />
+                <Songbar
+                    handleSongClick={handleSongClick}
+                    playing={playing}
+                />
+            </div>
         </div>
     )
 }

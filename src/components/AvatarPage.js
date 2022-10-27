@@ -1,9 +1,10 @@
 import React from "react";
 import AvatarCard from "./AvatarCard";
 import UserForm from "./UserForm";
+import Songbar from "./Songbar";
 
-function AvatarPage({avatars, setSelectedAvatar, image, name, setImage, setName, setAvatar}){
-    //handleSubmit for form
+function AvatarPage({avatars, setSelectedAvatar, image, name, setImage, setName, setAvatar, playing, handleSongClick}){
+
     function handleSubmit(e){
         e.preventDefault()
         const newAvatar={
@@ -45,6 +46,10 @@ function AvatarPage({avatars, setSelectedAvatar, image, name, setImage, setName,
             <div>
                 <img className="fillImage"/>
             </div>
+            <Songbar
+            playing={playing}
+            handleSongClick={handleSongClick}
+            />
         </div>
     )
 }

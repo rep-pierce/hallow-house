@@ -5,6 +5,7 @@ import CandyBucket from "./CandyBucket";
 import handleRandomCandy from "./handleRandomCandy";
 import sound from "./../Door-knock-sound-effect.mp3"
 import sound2 from "./../door-open-sound.mp3"
+import Songbar from "./Songbar";
 
 function HousePorch({ 
     width, 
@@ -14,16 +15,16 @@ function HousePorch({
     candies, 
     setCandies, 
     currentPorch, 
-    // direcs3, 
-    // showDirecs3, 
-    showDirecs4,
     color,
-    setColor
+    setColor,
+    handleSongClick,
+    playing
 }) {
 
     const [doorOpen, setDoorOpen] = useState('closed')
     const [message, setMessage] = useState(false)
     const [knocked, setKnocked] = useState(false)
+    const [tooMuchCandyMessage, setTooMuchCandyMessage] = useState(false)
 
     const navigate = useNavigate()
 
@@ -36,13 +37,11 @@ function HousePorch({
         function handleKeyPress(e) {
             if (e.key === 'ArrowDown') {
                 navigate('/spookystreet')
-                showDirecs4(true)
             }
             else if (e.key === ' ') {
 
                 if (!knocked) {
                     knockSound.play()
-                    // showDirecs3(false)
                     setTimeout(() => {
                         if (trickOrTreat.length === 0) {
                             setMessage(true)
@@ -51,8 +50,13 @@ function HousePorch({
                             doorOpenSound.play()
                             setTimeout(() => {
                                 setDoorOpen('open')
-                                setCandies(candies.concat(trickOrTreat))
                                 setKnocked(true)
+                                if (candies.length<13) {
+                                setCandies(candies.concat(trickOrTreat))
+                                }
+                                else {
+                                    setTooMuchCandyMessage(true)
+                                }
                             }, 1000)
                         }
                     }, 2000)
@@ -122,9 +126,8 @@ function HousePorch({
 
     return (
         <div>
-            {/* {direcs3 ? <div className="directions">spacebar to knock!</div> : null} */}
+            {tooMuchCandyMessage===true ? <div className="no-candy">You have too much candy already, kiddo!</div> : null}
             {message ? <div className="no-candy">they didn't answer 💀<br></br>should we tp them?🧻 <button onClick={handleTP}>Yes</button> <button onClick={handleNo}>No</button></div> : null}
-            {/* {knocked ? <button onClick={backClick} className="back-button">↓back↓to the streets</button> : null} */}
             <img src={background()} style={{ width: '70%', height: '100%' }} />
             {<EnergyBar
                 width={width}
@@ -141,6 +144,10 @@ function HousePorch({
                 candies={candies}
                 setCandies={setCandies}
             />}
+            <Songbar
+            playing={playing}
+            handleSongClick={handleSongClick}
+            />
         </div>
     )
 }

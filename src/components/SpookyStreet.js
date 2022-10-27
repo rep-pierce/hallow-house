@@ -20,13 +20,10 @@ function SpookyStreet({
     candies,
     setCandies,
     setCurrentPorch,
-    direcs1,
-    direcs2,
-    showDirecs3,
-    direcs4,
     color,
     setColor,
-    showDirecs1
+    handleSongClick,
+    playing
 }) {
    
 
@@ -153,7 +150,10 @@ function SpookyStreet({
                 candies={candies}
                 setCandies={setCandies}
             />
-            <Songbar/>
+            <Songbar
+            handleSongClick={handleSongClick}
+            playing={playing}
+            />
         </div>
     )
 }
