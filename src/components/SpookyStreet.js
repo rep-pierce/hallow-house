@@ -80,7 +80,7 @@ function SpookyStreet({ houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc
         <div>
             <div className="belt">
                 {renderHouses()}
-                <button className="more-button" onClick={() => setHouseIndex(houseIndex + 1)}>keep walkin</button>
+                {/* <button className="more-button" onClick={() => setHouseIndex(houseIndex + 1)}>keep walkin</button> */}
             </div>
             <div className="road-div">
                 <img

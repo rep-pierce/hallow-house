@@ -20,7 +20,7 @@ code {
 .grass {
   font-size: 325px;
   background-image: url("https://i.imgur.com/IfLsUc6.png");
-  color: green;
+  color: rgb(15, 109, 15);
   background-color: rgb(7, 59, 7);
 }
 
@@ -37,7 +37,7 @@ code {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 75%;
+  width: 69%;
   height: 150px;
   background-color: orange;
   border: solid;
@@ -165,8 +165,20 @@ body {
 
 html {
   transition: all 2s ease-in;
+  overflow: hidden;
 }
 
 html:active{
   opacity: 1;
+}
+
+.no-candy {
+  font-size: 3rem;
+  color: red;
+  position: absolute;
+  position: fixed; /* or absolute */
+  width: 100%;
+  margin: auto;
+  top: 50%;
+  background-color: black;
 }
