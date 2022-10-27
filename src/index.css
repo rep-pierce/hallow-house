@@ -183,11 +183,11 @@ body{
 html {
   transition: all 2s ease-in;
   text-align: center;
+  overflow: hidden;
 }
 
 html:active{
   opacity: 1;
-  overflow: hidden;
 }
 
 .no-candy {
