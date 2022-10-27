@@ -20,9 +20,12 @@ function Homepage() {
 
     return (
         <div className="homePage">
-            <h1 style={{textAlign: "center",color: "orange"}}>Welcome to Hallow House</h1>
-            <button className="homeButton" onClick={handleClick} >Click to Trick or Treat</button>
-            <img style={{padding: "40px"}} src="https://www.history.com/.image/ar_233:100%2Cc_fill%2Ccs_srgb%2Cg_faces:center%2Cq_auto:good%2Cw_1920/MTY3NDg4OTU3NjQxMTQwMDEz/halloween-gettyimages-172988453.webp"/>
+            <h1 style={{textAlign: "center",color: "white", fontSize:"60px"}}>Welcome to Hallow House</h1>
+            <button className="homeButton" onClick={handleClick} >Click To Choose Your Avatar</button>
+            <div >
+                <h3 style={{fontSize: "550px"}}></h3>
+                <img style={{height: "300px"}}/>
+            </div>
         </div>
     )
 }

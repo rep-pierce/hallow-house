@@ -69,7 +69,9 @@ function SpookyStreet({ selectedAvatar, houses, houseIndex, setHouseIndex, ghost
                     style={{left: `${ghostLoc}px`}}
                 />
             </div>
-            <div className="grass">.</div>
+            <div className="grass" style={{height:"550px"}}>
+                <img />
+            </div>
             <div>
             </div>
             <EnergyBar />

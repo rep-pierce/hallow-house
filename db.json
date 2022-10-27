@@ -40,13 +40,13 @@
   "avatars": [
     {
       "id": 1,
-      "name": "Goku",
-      "image": "https://www.pngmart.com/files/2/Goku-PNG-Photo.png"
+      "name": "Aang",
+      "image": "https://www.pngmart.com/files/2/Aang-PNG-File.png"
     },
     {
       "id": 2,
-      "name": "Aang",
-      "image": "https://www.pngmart.com/files/2/Aang-PNG-File.png"
+      "name": "Goku",
+      "image": "https://www.pngmart.com/files/2/Goku-PNG-Photo.png"
     },
     {
       "id": 3,
@@ -57,6 +57,11 @@
       "id": 4,
       "name": "Spooky",
       "image": "https://www.pngplay.com/wp-content/uploads/1/Ghost-PNG-Download-Image.png"
+    },
+    {
+      "name": "rex",
+      "image": "https://parade.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_711/MTkwNTgxMzA2MTg1MzYxMjc2/toy-story-characters-ftr.webp",
+      "id": 5
     }
   ]
 }

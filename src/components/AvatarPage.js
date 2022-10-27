@@ -34,7 +34,7 @@ function AvatarPage({avatars, setSelectedAvatar, image, name, setImage, setName,
     }
     return(
         <div>
-            <div className="avatarDiv" style={{color: "white", fontSize:"70px"}}>Choose Your Avatar
+            <div className="avatarDiv" style={{color: "white", fontSize:"70px"}}>Choose Your Avatar & Start Playing
             {renderAvatar()}
             </div>
             <UserForm handleSubmit={handleSubmit} handleName={handleName} image={image} name={name} handleImage={handleImage}/>

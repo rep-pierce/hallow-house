@@ -10,117 +10,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
-.belt {
-  grid-area: bt;
-  display: flex;
-  justify-content: space-evenly;
-  background-image: url("https://i.imgur.com/xh4TrK7.jpg");
-}
 
-.grass {
-  font-size: 325px;
-  background-image: url("https://i.imgur.com/IfLsUc6.png");
-  color: green;
-  background-color: rgb(7, 59, 7);
-}
 
+/* houses */
 .house {
   width: 405px;
   height: 420px;
   margin: auto;
 }
 
-.bucket-container {
-  /* display: inline;
-  float: right;
-  margin-top: 200px; */
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 75%;
-  height: 150px;
-  background-color: orange;
-  border: solid;
-  border-color: black;
+/* Homepage */
+.homePage{
+  background-color: black;
+  height: 100%;
+  background-image: url('https://www.whatspaper.com/wp-content/uploads/2022/10/hd-halloween-iphone-wallpaper-whatspaper-10.jpg');
 }
-
+.homeImage{
+  width: 100%;
+}
 .homeButton {
   color: black;
-  font-size: 30px;
+  font-size: 40px;
   background-color: orange;
 }
 
-body {
-  background-color: black;
-  text-align: center;
-}
 
 
-.bucket {
-  height: 100px;
-  /* display: flex;
-  justify-content: center;
-  text-align: center; */
-  padding-top: 25px;
-  margin: auto;
-  display: block;
-  position: absolute;
-}
-
-.energy {
-  position: absolute;
-  bottom: 0;
-  /* margin-bottom: 3%;
-  margin-left: 12%; */
-}
-
-.text{
-  width: 500px;
-  color: black;
-  font-size: 30px;
-  background-color: white;
-}
-
-.submit{
-  color: black;
-  font-size: 30px;
-  background-color: white;
-}
-
-.userh3{
-  color: white;
-  font-size: 40px;
-}
-
-/* .bar {
-  width: 250px;
-  height: 40px;
-  background-color: red;
-} */
-.bar {
-  height: 100px;
-  margin: auto;
-  display: block;
-  padding: 25px;
-  border: solid;
-  border-color: black;
-  background-color: red;
-  font-size: 30px;
-  color: white;
-}
-
-.gameoverBtn{
-  font-size: 50px;
-  background-color: red;
-  color: black
-}
-.userBtn{
-  background-color: white;
-  font-size: 30px;
-}
-.candy {
-  width: 50px;
-  position: relative;
+/* Avatar */
+.avatarDiv{
+  background-image: url("https://st.depositphotos.com/2015673/3066/v/600/depositphotos_30668111-stock-illustration-happy-halloween.jpg");
+  width: 100%;
+  height: 100%;
 }
 
 .avatar {
@@ -141,6 +61,114 @@ body {
   100%   { transform: translate(0, -0px); }   
 }
 
+
+
+
+/* AvatrForm */
+.text{
+  width: 500px;
+  color: black;
+  font-size: 30px;
+  background-color: white;
+}
+
+.submit{
+  color: black;
+  font-size: 30px;
+  background-color: white;
+}
+
+.userh3{
+  color: white;
+  font-size: 40px;
+}
+
+
+
+/* SpookyStreet */
+.belt {
+  grid-area: bt;
+  display: flex;
+  justify-content: space-evenly;
+  background-image: url("https://i.imgur.com/xh4TrK7.jpg");
+}
+
+.grass {
+  font-size: 400px;
+  background-image: url("https://i.imgur.com/IfLsUc6.png");
+  color: green;
+  background-color: rgb(7, 59, 7);
+}
+
+
+
+/* Bucket */
+.bucket-container {
+  /* display: inline;
+  float: right;
+  margin-top: 200px; */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 75%;
+  height: 150px;
+  background-color: plum;
+  border: solid;
+  border-color: black;
+}
+
+.bucket {
+  height: 100px;
+  /* display: flex;
+  justify-content: center;
+  text-align: center; */
+  padding-top: 25px;
+  margin: auto;
+  display: block;
+  position: absolute;
+}
+
+
+
+
+/* EnergyBar */
+.energy {
+  position: absolute;
+  bottom: 0;
+}
+
+.bar {
+  height: 100px;
+  margin: auto;
+  display: block;
+  padding: 25px;
+  border: solid;
+  border-color: black;
+  font-size: 30px;
+  color: white;
+}
+
+
+
+/* GameOver */
+.gameoverBtn{
+  font-size: 50px;
+  background-color: red;
+  color: black
+}
+
+
+
+
+/* Candy */
+.candy {
+  width: 50px;
+  position: relative;
+}
+
+
+
+/* MoreButton */
 .more-button {
   height: 100px;
   width: 98px;
@@ -149,7 +177,6 @@ body {
   margin-top: 7.5%;
   background: url('https://i.imgur.com/f0f6xAz.png');
   background-size: 100px;
-  /* background-color: orange; */
   filter: invert(100%);
   font-style: italic;
   font-weight: bold;
@@ -175,6 +202,8 @@ body {
   100% { opacity: 1; }
 }
 
+/* HTML+Body */
+
 html {
   transition: all 2s ease-in;
 }
@@ -183,4 +212,9 @@ html {
 
 html:active{
   opacity: 1;
+}
+
+body {
+  background-color: black;
+  text-align: center;
 }
