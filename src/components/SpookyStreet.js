@@ -4,8 +4,9 @@ import EnergyBar from "./EnergyBar"
 import CandyBucket from "./CandyBucket"
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { render } from "@testing-library/react"
 
-function SpookyStreet({ houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc }) {
+function SpookyStreet({ selectedAvatar, houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc}) {
     let start = houseIndex
     let end = houseIndex + 4
 
@@ -49,7 +50,7 @@ function SpookyStreet({ houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc
     }
 
     let Username = "Spooky";
-    let TotalCandy = 15;
+ 
 
     return (
         <div>
@@ -63,14 +64,14 @@ function SpookyStreet({ houses, houseIndex, setHouseIndex, ghostLoc, setGhostLoc
                     style={{ width: "100%", height: "150px", position: "absolute", left: "0%"}}
                 />
                 <img
-                    src="https://i.imgur.com/2TOqj6t.png"
+                    src={selectedAvatar}
                     className="avatar"
                     style={{left: `${ghostLoc}px`}}
                 />
             </div>
             <div className="grass">.</div>
             <div>
-            <h3 className="userh3">Username: {Username}</h3>
+            <h3 className="userh3" style={{fontSize: "100px"}}> Hallow House</h3>
             </div>
             <EnergyBar />
             <CandyBucket />
