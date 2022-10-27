@@ -10,6 +10,82 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+
+/* houses */
+.house {
+  width: 405px;
+  height: 420px;
+  margin: auto;
+}
+
+/* Homepage */
+.homePage{
+  background-color: black;
+  height: 100%;
+  background-image: url('https://www.whatspaper.com/wp-content/uploads/2022/10/hd-halloween-iphone-wallpaper-whatspaper-10.jpg');
+}
+.homeImage{
+  width: 100%;
+}
+.homeButton {
+  color: black;
+  font-size: 40px;
+  background-color: orange;
+}
+
+
+
+/* Avatar */
+.avatarDiv{
+  background-image: url("https://st.depositphotos.com/2015673/3066/v/600/depositphotos_30668111-stock-illustration-happy-halloween.jpg");
+  width: 100%;
+  height: 100%;
+}
+
+.avatar {
+  position: relative;
+  width: 100px;
+  top: auto;
+  animation-name: floating;
+  animation-duration: 1.25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }   
+}
+
+
+
+
+/* AvatrForm */
+.text{
+  width: 500px;
+  color: black;
+  font-size: 30px;
+  background-color: white;
+}
+
+.submit{
+  color: black;
+  font-size: 30px;
+  background-color: white;
+}
+
+.userh3{
+  color: white;
+  font-size: 40px;
+}
+
+
+
+/* SpookyStreet */
 .belt {
   grid-area: bt;
   display: flex;
@@ -17,12 +93,15 @@ code {
   background-image: url("https://i.imgur.com/xh4TrK7.jpg");
 }
 
+<<<<<<< HEAD
 .grass {
-  font-size: 325px;
+  font-size: 400px;
   background-image: url("https://i.imgur.com/IfLsUc6.png");
   color: rgb(15, 109, 15);
   background-color: rgb(7, 59, 7);
 }
+=======
+>>>>>>> Cform
 
 .house {
   width: 405px;
@@ -39,20 +118,15 @@ code {
   right: 0;
   width: 69%;
   height: 150px;
-  background-color: orange;
+  background-color: plum;
   border: solid;
   border-color: black;
-}
-
-.homeButton {
-  color: black;
-  font-size: 30px;
-  background-color: orange;
-}
-
-body {
+=======
+/* Homepage */
+.homePage{
   background-color: black;
-  text-align: center;
+  height: 100%;
+  background-image: url('https://www.whatspaper.com/wp-content/uploads/2022/10/hd-halloween-iphone-wallpaper-whatspaper-10.jpg');
 }
 
 .bucket {
@@ -69,8 +143,6 @@ body {
 .energy {
   position: absolute;
   bottom: 0;
-  /* margin-bottom: 3%;
-  margin-left: 12%; */
 }
 
 .userh3{
@@ -90,7 +162,6 @@ body {
   padding: 25px;
   border: solid;
   border-color: black;
-  background-color: red;
   font-size: 30px;
   color: white;
 }
@@ -100,13 +171,21 @@ body {
   background-color: red;
   color: black
 }
-.userBtn{
-  background-color: white;
-  font-size: 30px;
-}
+
+
+
+
+/* Candy */
 .candy {
   width: 120px;
   position: relative;
+=======
+/* Avatar */
+.avatarDiv{
+  background-image: url("https://st.depositphotos.com/2015673/3066/v/600/depositphotos_30668111-stock-illustration-happy-halloween.jpg");
+  width: 100%;
+  height: 100%;
+>>>>>>> Cform
 }
 
 .avatar {
@@ -137,7 +216,6 @@ body {
   margin-top: 7.5%;
   background: url('https://i.imgur.com/f0f6xAz.png');
   background-size: 100px;
-  /* background-color: orange; */
   filter: invert(100%);
   font-style: italic;
   font-weight: bold;
@@ -163,10 +241,14 @@ body {
   100% { opacity: 1; }
 }
 
+/* HTML+Body */
+
 html {
   transition: all 2s ease-in;
   overflow: hidden;
 }
+
+
 
 html:active{
   opacity: 1;

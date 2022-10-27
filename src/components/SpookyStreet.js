@@ -5,6 +5,7 @@ import CandyBucket from "./CandyBucket"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Songbar from "./Songbar"
+import { render } from "@testing-library/react"
 
 function SpookyStreet({
     houses,
@@ -100,7 +101,7 @@ function SpookyStreet({
     }
 
     let Username = "Spooky";
-    let TotalCandy = 15;
+ 
 
     return (
         <div>
@@ -117,14 +118,15 @@ function SpookyStreet({
                     style={{ width: "100%", height: "150px", position: "absolute", left: "0%" }}
                 />
                 <img
-                    src="https://i.imgur.com/2TOqj6t.png"
+                    src={selectedAvatar}
                     className="avatar"
                     style={{ left: `${ghostLoc}px` }}
                 />
             </div>
-            <div className="grass">.</div>
+            <div className="grass" style={{height:"550px"}}>
+                <img />
+            </div>
             <div>
-                <h3 className="userh3">Username: {Username}</h3>
             </div>
             <EnergyBar
                 width={width}

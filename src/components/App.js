@@ -4,7 +4,8 @@ import SpookyStreet from './SpookyStreet'
 import HousePorch from './HousePorch'
 import Homepage from './Homepage'
 import GameOver from './GameOver'
-import { Route, Routes } from "react-router-dom"
+import AvatarPage from './AvatarPage';
+import { Route, Routes} from "react-router-dom"
 import { useEffect, useState } from "react";
 import music from "../song.mp3"
 
@@ -13,7 +14,11 @@ function App() {
   const [houses, setHouses] = useState([])
   const [houseIndex, setHouseIndex] = useState(0)
   const [ghostLoc, setGhostLoc] = useState(0)
-  const [name, setName] = useState("Spooky")
+  const [avatars, setAvatar] = useState([])
+  const [selectedAvatar, setSelectedAvatar] = useState("")
+  const [name, setName] = useState("")
+  const [image, setImage] = useState("")
+
   const [width, setWidth] = useState("400")
   const [energy, setEnergy] = useState("150")
   const [candies, setCandies] = useState([])
@@ -31,7 +36,13 @@ function App() {
   }, [])
 
   const song = new Audio(music)
-  
+    useEffect(() => {
+    fetch('http://localhost:3001/avatars')
+      .then(r => r.json())
+      .then(setAvatar)
+  }, [])
+
+
   function handleSongClick(){
     if (!playing) {
       song.play()
@@ -43,11 +54,10 @@ function App() {
       isPlaying(false)
     }
 
-    
-  }
 
   return (
     <div className="App">
+
       <Routes>
         <Route
           path="/"
@@ -62,6 +72,7 @@ function App() {
         <Route
           path="spookystreet"
           element={<SpookyStreet
+          selectedAvatar={selectedAvatar}
             houses={houses}
             setHouses={setHouses}
             houseIndex={houseIndex}
@@ -98,11 +109,21 @@ function App() {
             showDirecs3={showDirecs3}
             showDirecs4={showDirecs4}
           />}
-        />
-        <Route
-          path="/GameOver"
-          element={<GameOver />}
-        />
+            />
+            <Route path="/porch" element={<HousePorch />} />
+            <Route path="/GameOver" element={<GameOver />} />
+            <Route path="/GameOver" element={<GameOver />} />
+            <Route path="/AvatarPage" 
+            element={<AvatarPage
+            avatars={avatars} 
+            setSelectedAvatar={setSelectedAvatar}
+            setName={setName}
+            setImage={setImage}
+            name={name}
+            image={image}
+            setAvatar={setAvatar}
+            />
+            } />
       </Routes>
     </div>
   );
