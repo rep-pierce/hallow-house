@@ -17,10 +17,8 @@ function Homepage({ direcs1, showDirecs1, showDirecs2, handleSongClick}) {
         <div className="homePage">
             <h1 style={{textAlign: "center",color: "white", fontSize:"60px"}}>Welcome to Hallow House</h1>
             <button className="homeButton" onClick={handleClick} >Click To Choose Your Avatar</button>
-            <div >
                 <h3 style={{fontSize: "550px"}}></h3>
-                <img style={{height: "300px"}}/>
-            </div>
+                <img style={{height: "350px"}}/>
         </div>
     )
 }

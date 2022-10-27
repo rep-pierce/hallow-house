@@ -39,9 +39,7 @@ function AvatarPage({avatars, setSelectedAvatar, image, name, setImage, setName,
     //return JSX
     return(
         <div className="avatarPage">
-            <>
             <h1 className="avtarPageTitle">Choose Your Character</h1>
-            </>
             {renderAvatar()}
             <UserForm handleSubmit={handleSubmit} handleName={handleName} image={image} name={name} handleImage={handleImage}/>
             <div>
