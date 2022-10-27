@@ -35,9 +35,9 @@ function SpookyStreet({
 
     let nextId = 3
     const housePorches = [
-        { closed: "https://i.imgur.com/8gKB2e1.jpg", open: "https://i.imgur.com/Gj4rbsx.jpg" },
-        { closed: "https://i.imgur.com/qykF5SL.jpg", open: "https://i.imgur.com/oSo8nFM.jpg" },
-        { closed: "https://i.imgur.com/ePkGC0v.jpg", open: "https://i.imgur.com/35Aa1oc.jpg" }
+        { closed: "https://i.imgur.com/8gKB2e1.jpg", open: "https://i.imgur.com/Gj4rbsx.jpg", tpd: "https://i.imgur.com/n9eJYca.jpg" },
+        { closed: "https://i.imgur.com/qykF5SL.jpg", open: "https://i.imgur.com/oSo8nFM.jpg", tpd: "https://i.imgur.com/QCaWumN.jpg" },
+        { closed: "https://i.imgur.com/ePkGC0v.jpg", open: "https://i.imgur.com/35Aa1oc.jpg", tpd: "https://i.imgur.com/0fxMY5j.jpg" }
     ]
 
     function getNewRandomBackground() {
@@ -85,16 +85,18 @@ function SpookyStreet({
         }
     })
 
-
-    if(width >= 0 & energy >= 75){
-        setColor("green")
-    }
-    if(width >= 0 & energy > 25 & energy < 75){
-        setColor("orange")
-    }
-    if(width >= 0 & energy <= 25 & energy >=1){
-        setColor("red")
-    }
+    useEffect(() => {
+        if(width >= 0 & energy >= 75){
+            setColor("green")
+        }
+        if(width >= 0 & energy > 25 & energy < 75){
+            setColor("orange")
+        }
+        if(width >= 0 & energy <= 25 & energy >=1){
+            setColor("red")
+        }
+    })
+    
 
     // useEffect(() => {
     //     const timer = setTimeout(() => showDirecs1(true), 4000)

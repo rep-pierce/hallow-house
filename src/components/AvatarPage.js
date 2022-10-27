@@ -3,7 +3,7 @@ import AvatarCard from "./AvatarCard";
 import UserForm from "./UserForm";
 
 function AvatarPage({avatars, setSelectedAvatar, image, name, setImage, setName, setAvatar}){
-
+    //handleSubmit for form
     function handleSubmit(e){
         e.preventDefault()
         const newAvatar={
@@ -20,24 +20,31 @@ function AvatarPage({avatars, setSelectedAvatar, image, name, setImage, setName,
           .then((r) => r.json())
           .then(setAvatar([...avatars, newAvatar]))
         }
-
+    //handleInput Name for form
     function handleName(e){
         setName(e.target.value)
     }
 
+    //handleInputImage for form
     function handleImage(e){
         setImage(e.target.value)
     }
+
+    //render each Avatar in AvatarCard
     function renderAvatar() {
         return avatars.map(avatar => <AvatarCard key={avatar.id} avatar={avatar} setSelectedAvatar={setSelectedAvatar}/>
         )
     }
+
+    //return JSX
     return(
-        <div>
-            <div className="avatarDiv" style={{color: "white", fontSize:"70px"}}>Choose Your Avatar & Start Playing
+        <div className="avatarPage">
+            <h1 className="avtarPageTitle">Choose Your Character</h1>
             {renderAvatar()}
-            </div>
             <UserForm handleSubmit={handleSubmit} handleName={handleName} image={image} name={name} handleImage={handleImage}/>
+            <div>
+                <img className="fillImage"/>
+            </div>
         </div>
     )
 }

@@ -13,6 +13,11 @@
   }
 }
 
+.avatarImage{
+  justify-self: center;
+  height: 12rem;
+  width: auto;
+}
 .sewerClown{
   width: 100px;
 }

@@ -24,13 +24,8 @@ body{
   background-color: black;
 }
 
-/* Avatar */
-.avatarDiv{
-  background-image: url("https://st.depositphotos.com/2015673/3066/v/600/depositphotos_30668111-stock-illustration-happy-halloween.jpg");
-  width: 100%;
-  height: 100%;
-}
 
+/* Avatar */
 .avatar {
   position: relative;
   width: 100px;
@@ -41,7 +36,39 @@ body{
   animation-timing-function: ease-in-out;
   margin-left: 30px;
   margin-top: 10px;
+  -webkit-filter: drop-shadow(0px 0px 20px chartreuse);
+  filter: drop-shadow(0px 0px 20px chartreuse);
 }
+.card{
+  text-align: center;
+  border-color: black;
+  background-color: white;
+  /* background-image: url("https://static.displate.com/857x1200/displate/2019-10-07/72c4c5b58a991d632ffe06dc0a7f9d53_3b86f5d91ac3ff3f6ca01b4af3f81d58.jpg"); */
+  padding: 1rem;
+  width: 15rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px orange;
+}
+
+.avatarPage{
+  background-image: url("https://wallpaperaccess.com/full/1155679.jpg");
+}
+
+.fillImage{
+  height: 300px;
+}
+.avatarImage{
+  width: 100%;
+  height: 100%;
+}
+
+.avtarPageTitle{
+  color: white ;
+  font-size: 70px;
+}
+
 
 @keyframes floating {
   0% { transform: translate(0,  0px); }
@@ -139,26 +166,7 @@ body{
   width: 120px;
   position: relative;
 }
-/* Avatar */
-.avatarDiv{
-  background-image: url("https://st.depositphotos.com/2015673/3066/v/600/depositphotos_30668111-stock-illustration-happy-halloween.jpg");
-  width: 100%;
-  height: 100%;
-}
 
-.avatar {
-  position: relative;
-  width: 100px;
-  top: auto;
-  animation-name: floating;
-  animation-duration: 1.25s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  margin-left: 30px;
-  margin-top: 10px;
-  -webkit-filter: drop-shadow(0px 0px 20px chartreuse);
-  filter: drop-shadow(0px 0px 20px chartreuse);
-}
 
 @keyframes floating {
   0% { transform: translate(0,  0px); }
@@ -175,6 +183,7 @@ body{
 html {
   transition: all 2s ease-in;
   text-align: center;
+  overflow: hidden;
 }
 
 html:active{
@@ -182,7 +191,7 @@ html:active{
 }
 
 .no-candy {
-  font-size: 6rem;
+  font-size: 2rem;
   color: red;
   position: absolute;
   position: fixed; 

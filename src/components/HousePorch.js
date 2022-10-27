@@ -21,7 +21,7 @@ function HousePorch({
     setColor
 }) {
 
-    const [doorOpen, setDoorOpen] = useState(false)
+    const [doorOpen, setDoorOpen] = useState('closed')
     const [message, setMessage] = useState(false)
     const [knocked, setKnocked] = useState(false)
 
@@ -50,7 +50,7 @@ function HousePorch({
                         } else {
                             doorOpenSound.play()
                             setTimeout(() => {
-                                setDoorOpen(true)
+                                setDoorOpen('open')
                                 setCandies(candies.concat(trickOrTreat))
                                 setKnocked(true)
                             }, 1000)
@@ -86,28 +86,46 @@ function HousePorch({
     //     }
     // }
 
-    function backClick() {
-        navigate('/spookystreet')
-        showDirecs4(true)
+    function background() {
+        if (doorOpen === 'closed'){
+            return currentPorch.closed
+        }else if (doorOpen === 'open'){
+            return currentPorch.open
+        }else if(doorOpen === 'tpd'){
+            return currentPorch.tpd
+        }
+    }
 
+
+    useEffect(() => {
+        if(width >= 0 & energy >= 75){
+            setColor("green")
+        }
+        if(width >= 0 & energy > 25 & energy < 75){
+            setColor("orange")
+        }
+        if(width >= 0 & energy <= 25 & energy >=1){
+            setColor("red")
+        }
+    })
+
+    function handleTP() {
+        setMessage(false)
+        setEnergy(energy -25)
+        setWidth(width-125)
+        setDoorOpen('tpd')
     }
-    let background = !doorOpen ? currentPorch.closed : currentPorch.open
-    if(width >= 0 & energy >= 75){
-        setColor("green")
-    }
-    if(width >= 0 & energy > 25 & energy < 75){
-        setColor("orange")
-    }
-    if(width >= 0 & energy <= 25 & energy >=1){
-        setColor("red")
+
+    function handleNo() {
+        navigate('/spookystreet')
     }
 
     return (
         <div>
             {/* {direcs3 ? <div className="directions">spacebar to knock!</div> : null} */}
-            {message ? <div onClick={backClick} className="no-candy">they didn't answer 💀<br></br>should we tp them?🧻</div> : null}
+            {message ? <div className="no-candy">they didn't answer 💀<br></br>should we tp them?🧻 <button onClick={handleTP}>Yes</button> <button onClick={handleNo}>No</button></div> : null}
             {/* {knocked ? <button onClick={backClick} className="back-button">↓back↓to the streets</button> : null} */}
-            <img src={background} style={{ width: '70%', height: '100%' }} />
+            <img src={background()} style={{ width: '70%', height: '100%' }} />
             {<EnergyBar
                 width={width}
                 setWidth={setWidth}
