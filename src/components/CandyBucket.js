@@ -13,7 +13,7 @@ function CandyBucket({ width, setWidth, energy, setEnergy, candies, setCandies }
         if (width + 160 > 400) {
             setWidth(400)
         } else {
-            setWidth(width + 160)
+            setWidth(width + 200)
         }
     }
 
