@@ -18,8 +18,27 @@
   color: black;
   font-size: 40px;
   background-color: orange;
+  border: solid;
+  border-color: white;
+  border-width: 3px;
+}
+.instructBtn{
+  margin: 10px;
+  font-size: 40px;
+  color: black;
+  background-color: rgb(40, 171, 223);
+  border: solid;
+  border-color: white;
+  border-width: 3px;
 }
 
+.instructList{
+  font-size: 30px;
+  border: solid;
+  border-color: white;
+  border-width: 5px;
+  background-color: rgb(40, 171, 223) ;
+}
 body{
   background-color: black;
 }
@@ -41,19 +60,22 @@ body{
 }
 .card{
   text-align: center;
-  border-color: black;
   background-color: white;
+
   /* background-image: url("https://static.displate.com/857x1200/displate/2019-10-07/72c4c5b58a991d632ffe06dc0a7f9d53_3b86f5d91ac3ff3f6ca01b4af3f81d58.jpg"); */
   padding: 1rem;
   width: 15rem;
   height: 25rem;
   display: inline-grid;
   margin: 1rem 2rem;
-  box-shadow: 3px 4px orange;
+  box-shadow: 4px 4px black ;
+  border: solid;
+  border-width: 5px;
 }
 
 .avatarPage{
-  background-image: url("https://wallpaperaccess.com/full/1155679.jpg");
+  background-image: url("https://st.depositphotos.com/2015673/3066/v/600/depositphotos_30668111-stock-illustration-happy-halloween.jpg");
+  margin-top: 0 ;
 }
 
 .fillImage{
