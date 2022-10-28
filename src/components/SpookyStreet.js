@@ -25,7 +25,7 @@ function SpookyStreet({
     handleSongClick,
     playing
 }) {
-   
+
 
     let start = houseIndex
     let end = houseIndex + 4
@@ -60,7 +60,7 @@ function SpookyStreet({
                 setGhostLoc(ghostLoc + 8)
                 setWidth((width) => width - 5)
                 setEnergy((energy) => energy - 1)
-                
+
             }
             else if (e.key === 'ArrowLeft') {
                 setGhostLoc(ghostLoc - 8)
@@ -70,7 +70,6 @@ function SpookyStreet({
             else if (e.key === 'ArrowUp') {
                 setCurrentPorch(getNewRandomBackground())
                 navigate('/porch')
-                // showDirecs3(true)
             }
         }
 
@@ -83,34 +82,33 @@ function SpookyStreet({
     })
 
     useEffect(() => {
-        if(width >= 0 & energy >= 75){
+        if (width >= 0 & energy >= 75) {
             setColor("green")
         }
-        if(width >= 0 & energy > 25 & energy < 75){
+        if (width >= 0 & energy > 25 & energy < 75) {
             setColor("orange")
         }
-        if(width >= 0 & energy <= 25 & energy >=1){
+        if (width >= 0 & energy <= 25 & energy >= 1) {
             setColor("red")
         }
+
+        if (ghostLoc > 1000) {
+            setGhostLoc(-995)
+            setHouseIndex(houseIndex + 4)
+        }
+        if (ghostLoc < -1000) {
+            setGhostLoc(995)
+            setHouseIndex(houseIndex - 4)
+        }
+        if (energy < 1) {
+            navigate("/GameOver")
+        }
+
+
     })
-    
 
-    // useEffect(() => {
-    //     const timer = setTimeout(() => showDirecs1(true), 4000)
-    //     return()=>clearTimeout(timer)
-    // },[])
 
-    if (ghostLoc > 1000) {
-        setGhostLoc(-995)
-        setHouseIndex(houseIndex + 4)
-    }
-    if (ghostLoc < -1000) {
-        setGhostLoc(995)
-        setHouseIndex(houseIndex - 4)
-    }
-    if (energy < 1) {
-        navigate("/GameOver")
-    } 
+
 
     return (
         <div>
@@ -132,7 +130,7 @@ function SpookyStreet({
                     style={{ left: `${ghostLoc}px` }}
                 />
             </div>
-            <div className="grass" style={{height:"550px"}}>
+            <div className="grass" style={{ height: "550px" }}>
                 <img />
             </div>
             <div>
@@ -151,8 +149,8 @@ function SpookyStreet({
                 setCandies={setCandies}
             />
             <Songbar
-            handleSongClick={handleSongClick}
-            playing={playing}
+                handleSongClick={handleSongClick}
+                playing={playing}
             />
         </div>
     )

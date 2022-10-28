@@ -12,7 +12,7 @@ function Homepage({ handleSongClick, playing }) {
 
     return (
         <div className="homePage">
-            <h1 style={{ textAlign: "center", color: "white", fontSize: "60px" }}>Welcome to Hallow House</h1>
+            <h1 style={{margin: "0", textAlign: "center", color: "white", fontSize: "60px" }}>Welcome to Hallow House</h1>
             <button className="homeButton" onClick={handleClick} >Click To Choose Your Avatar</button>
             <div>
                 <h1 className="playInstructions">How to Play:</h1>

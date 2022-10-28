@@ -67,6 +67,7 @@ body{
 .avtarPageTitle{
   color: white ;
   font-size: 70px;
+  margin: 0;
 }
 
 
@@ -239,11 +240,12 @@ html:active{
   right: 0;
   margin-top: 2%;
   margin-right: 2%;
-  background: url('https://i.imgur.com/f0f6xAz.png');
+  background: url('https://i.imgur.com/PWHDDv3.png');
   background-size: 200px;
-  filter: invert(100%);
+  /* filter: invert(100%); */
   font-style: italic;
-  font-weight: bold;
+  color: rgb(255, 166, 0);
+  font-weight:bolder;
   border-radius: 5%;
   outline-style: groove;
   outline-width: 5px;
@@ -266,4 +268,17 @@ html:active{
 @keyframes fade {
   0% { opacity: 0%; }
   100% { opacity: 1; }
+}
+
+.instructions {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.playInstructions {
+  /* background-color: blue; */
+  /* font-weight: bolder; */
+  color: white;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
 }

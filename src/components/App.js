@@ -40,7 +40,8 @@ function App() {
 
   const [song] = useState(new Audio(music))
 
-  function handleSongClick() {
+  function handleSongClick(e) {
+    console.log(e)
     if (playing === false) {
       song.play()
       isPlaying(true)
