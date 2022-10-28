@@ -1,10 +1,10 @@
 import React from 'react';
 // import './App.css';
-import SpookyStreet from './SpookyStreet'
-import HousePorch from './HousePorch'
-import Homepage from './Homepage'
-import GameOver from './GameOver'
-import AvatarPage from './AvatarPage';
+import SpookyStreet from './components/SpookyStreet'
+import HousePorch from './components/HousePorch'
+import Homepage from './components/Homepage'
+import GameOver from './components/GameOver'
+import AvatarPage from './components/AvatarPage';
 import { Route, Routes } from "react-router-dom"
 import { useEffect, useState } from "react";
 import music from "../WAC.wav"
