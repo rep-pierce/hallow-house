@@ -7,7 +7,7 @@ import GameOver from './components/GameOver'
 import AvatarPage from './components/AvatarPage';
 import { Route, Routes } from "react-router-dom"
 import { useEffect, useState } from "react";
-import music from "../WAC.wav"
+import music from "./WAC.wav"
 
 
 function App() {
